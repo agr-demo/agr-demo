@@ -3,10 +3,9 @@ package com.stackinsat.test.demo.controller;
 import com.stackinsat.test.demo.entity.Personne;
 import com.stackinsat.test.demo.service.PersonneService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -21,4 +20,8 @@ public class PersonneController {
         return personneService.getPersonnes();
     }
 
+    @PostMapping("/add")
+    public void addPersonne(@Valid @RequestBody Personne personne) {
+        personneService.addPersonne(personne);
+    }
 }

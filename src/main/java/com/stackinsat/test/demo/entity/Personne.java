@@ -40,4 +40,8 @@ public class Personne {
 
     @JsonProperty("dateOfBirth")
     private LocalDate dateOfBirth;
+
+    @Transient
+    @JsonProperty("actualAge")
+    private int actualAge;
 }
